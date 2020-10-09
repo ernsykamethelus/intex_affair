@@ -2,5 +2,5 @@
 
 require_relative '../lib/intex_affair'
 
-IntexAffair::Command.new.command
+IntexAffair::Command.new.greeting
 

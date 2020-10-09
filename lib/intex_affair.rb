@@ -1,5 +1,5 @@
-require "intex_affair/version"
-require "intex_affair/command"
+require_relative "./intex_affair/version"
+require_relative "./intex_affair/command"
 
 require 'pry'
 
