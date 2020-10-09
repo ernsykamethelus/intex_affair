@@ -2,5 +2,5 @@
 
 require_relative '../lib/intex_affair'
 
-EdenEvents::Command.new.call
+IntexAffair::Command.new.command
 

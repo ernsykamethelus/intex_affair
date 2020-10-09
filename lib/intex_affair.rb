@@ -1,5 +1,5 @@
 require "intex_affair/version"
-require "eden_events/command"
+require "intex_affair/command"
 
 require 'pry'
 
