@@ -5,6 +5,8 @@ class IntexAffair::Command
     name_and_message
     printed_months        #--> only the months left over for the year of 2020
     user_chosen_month
+    get_chosen_month
+    valid_input
     #make_tags
     # get_events_for(month)
     #list_events
@@ -30,6 +32,15 @@ class IntexAffair::Command
     @months.each.with_index(1) do |month, index|
     puts "#{index}. #{month}"
   end
+  
+  def get_chosen_month
+    chosen_month = gets.strips.to_i 
+    show_events_for(chosen_month) if valid_input(chosen_month, @months)
+  end
+  
+  def valid_input(inout, data)
+     input.to_i <= data.lenght && input.to_i > 0 
+   end
 end
   
 #   def make_tags(tag, word)
