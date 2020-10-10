@@ -1,0 +1,4 @@
+class IntexAffair::Month 
+  
+  
+end

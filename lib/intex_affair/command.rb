@@ -6,14 +6,12 @@ class IntexAffair::Command
     printed_months        #--> only the months left over for the year of 2020
     user_chosen_month
     get_chosen_month
-    valid_input
     #make_tags
     # get_events_for(month)
     #list_events
     #chosen_event
-    mask_up
+    #mask_up
    end
- end 
  
  def name_and_message
    @name = "name"
@@ -23,33 +21,28 @@ class IntexAffair::Command
  
  def printed_months
    #to be scraped
-   puts "\nHappy Choosing:"
-   @months = ["October", "November", "December"]
+   @months = IntexAffair::Month.all #i wish i had some months so i gave it a list of months
  end
  
  def user_chosen_month
  # list months
+    puts "\nHappy Choosing:\n"
     @months.each.with_index(1) do |month, index|
     puts "#{index}. #{month}"
   end
-  
+end
+
   def get_chosen_month
-    chosen_month = gets.strips.to_i 
+    chosen_month = gets.strip.to_i 
     show_events_for(chosen_month) if valid_input(chosen_month, @months)
   end
   
-  def valid_input(inout, data)
-     input.to_i <= data.lenght && input.to_i > 0 
-   end
-end
-  
-#   def make_tags(tag, word)
-#     "<#{tag}> #{word} </#{tag}>"
-# end
-# print make_tags("i", "printed_months")
-#   end
+  def valid_input(input, data)
+    input.to_i <= data.length && input.to_i > 0 
+  end
 
-
-def mask_up
-  puts "\nEvery person + every mask makes a difference. Don't forget to mask up!"
-end
+def show_events_for(chosen_month)
+    month = @months[chosen_month -1]
+    puts "Here are events for #{month}"
+    end
+  end
