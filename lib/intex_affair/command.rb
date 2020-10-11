@@ -28,7 +28,7 @@ class IntexAffair::Command
  # list months
     puts "\nHappy Choosing:\n"
     @months.each.with_index(1) do |month, index|
-    puts "#{index}. #{month}"
+    puts "#{index}. #{month.name}"
   end
 end
 
