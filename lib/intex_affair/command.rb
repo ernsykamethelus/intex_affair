@@ -1,11 +1,13 @@
 class IntexAffair::Command
+
+  require_relative 'months.rb'
   
    def greeting
      puts 'Bienvenue to Intex!'
     name_and_message
-     get_months       #--> only the months left over for the year of 2020
+     printed_months       #--> only the months left over for the year of 2020
     user_chosen_month
-    get_chosen_month
+    get_user_month
    end
  
  def name_and_message
@@ -13,7 +15,7 @@ class IntexAffair::Command
  end
  
  
- def get_months
+ def printed_months
    #to be scraped
    @months = IntexAffair::Month.all #i wish i had some months so i gave it a list of months
  end
@@ -40,7 +42,14 @@ end
     month.get_events
     puts "Here are events for #{month.name}"
     month.events.each.with_index(1) do |event, index|
-      puts "{index}. #{event.name}
+      puts "{index}. #{event.name}"
     end
   end
-end
+
+  def goodbye
+  puts "Thank you!"
+  exit
+   end
+ end
+
+puts IntexAffair::Command.new.greeting

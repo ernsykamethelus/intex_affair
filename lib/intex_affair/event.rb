@@ -3,7 +3,7 @@ class IntexAffair::Event
     @@all = []
    
     
-    def initialize(name)
+    def initialize(name, month)
       @name = name 
       @month = month
       add_to_month

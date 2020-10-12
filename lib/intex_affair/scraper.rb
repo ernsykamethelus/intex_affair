@@ -8,7 +8,7 @@ class IntexAffair::Scraper
   def self.scraped_months
     doc = Nokogiri::HTML(URI.open("https://www.wmoda.com/visit-2/"))
   
-     months = doc.css("select#archives-dropdown-2")
+     months = doc.css("select#archives-dropdown-2 option")
     
     months.each do |m|
     name = m.text
@@ -16,8 +16,12 @@ class IntexAffair::Scraper
 end
   end
 
-  def self.scraped_events(month)
-    IntexAffair::Event.new("fun event", month)
-    IntexAffair::Event.new("not fun event", month)
-  end
-end
+   def self.scraped_events(month)
+      doc = Nokogiri::HTML(open(url))
+      
+      event = doc.search("div.recent-posts-2 ul li").attr("h3")
+       events.each do |e|
+        name = m.text
+        IntexAffair::Event.new(name)
+       end
+    end
