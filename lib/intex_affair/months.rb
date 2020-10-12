@@ -1,9 +1,11 @@
 class IntexAffair::Month 
+  attr_accessor :name, :events
   @@all = []
-  attr_accessor :name 
+ 
   
   def initialize(name)
     @name = name 
+    @events = []
     save
   end
   
@@ -11,7 +13,12 @@ class IntexAffair::Month
     IntexAffair::Scraper.scraped_months if @@all.empty?
     @@all
   end
-  
+   
+
+  def get_events
+    IntexAffair::Scraper.scraped_events(self) if @events.empty?
+  end
+   
   def save
     @@all << self
   end

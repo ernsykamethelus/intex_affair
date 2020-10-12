@@ -5,6 +5,8 @@ require_relative "./intex_affair/scraper"
 
 require 'pry'
 require 'nokogiri'
+require 'open-uri'
+
 
 module IntexAffair
   class Error < StandardError; end

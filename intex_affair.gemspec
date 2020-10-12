@@ -9,19 +9,19 @@ Gem::Specification.new do |spec|
   spec.authors       = ["'Ernsyka Methelus'"]
   spec.email         = ["'ernsykamethelus@yahoo.com'"]
 
-  spec.summary       = %q{not so shy people}
-  spec.description   = %q{shy people}
-  spec.homepage      = "http://www.introverts.com"
+  spec.summary       = %q{"A Ruby gem to help introverts"}
+  spec.description   = %q{"A Ruby gem to have musuem dates with anyone you would like"}
+  spec.homepage      = "git@github.com:ernsykamethelus/intex_affair.git"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
   # to allow pushing to a single host or delete this section to allow pushing to any host.
   if spec.respond_to?(:metadata)
-    spec.metadata["allowed_push_host"] = "http://www.introverts.com"
+    spec.metadata["allowed_push_host"] = "https://www.wmoda.com/visit-2/"
 
     spec.metadata["homepage_uri"] = spec.homepage
-    spec.metadata["source_code_uri"] = "http://www.introverts.com"
-    spec.metadata["changelog_uri"] = "http://www.introverts.com"
+    spec.metadata["source_code_uri"] = "https://www.wmoda.com/visit-2/"
+    spec.metadata["changelog_uri"] = "https://www.wmoda.com/visit-2/"
   else
     raise "RubyGems 2.0 or newer is required to protect against " \
       "public gem pushes."
