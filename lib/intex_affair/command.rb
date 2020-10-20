@@ -12,7 +12,7 @@ class IntexAffair::Command
     #  @input = ""
     #  until @input == "exit"
     name_and_message
-    # chosen_months       #--> only the months left over for the year of 2020
+    chosen_months       #--> only the months left over for the year of 2020
     user_chosen_month
     get_month
    goodbye
@@ -24,28 +24,28 @@ class IntexAffair::Command
  end
  
  
-#  def chosen_months
-#    #to be scraped
-#    @months = IntexAffair::Month.all #i wish i had some months so i gave it a list of months
-#  end
+ def chosen_months
+   #to be scraped
+   @months = IntexAffair::Month.all #i wish i had some months so i gave it a list of months
+ end
  
  def user_chosen_month
  # list months
     puts "\nHappy Choosing:\n"
-    # @months.each do |month|
-    # puts month.name
+    @months.each do |month|
+    puts month.name
   end
 
   def get_month
     @months = IntexAffair::Month.all
     chosen_month = gets.strip.to_i 
     show_events_for(chosen_month) 
-    # if valid_input(chosen_month, @months)
+    if valid_input(chosen_month, @months)
   end
   
-  # def valid_input(input, data)
-  #   input.to_i <= data.length && input.to_i > 0 
-  # end
+  def valid_input(input, data)
+    input.to_i <= data.length && input.to_i > 0 
+  end
 
    def show_events_for(chosen_month)
     puts "\nPlease Choose Desired Event:\n"
@@ -62,7 +62,6 @@ class IntexAffair::Command
 
   def choose_ending
     puts "If your desired event was chosen, Tap 'That's it' to exit"
-    @input = gets.strip
   end
 
   def goodbye
