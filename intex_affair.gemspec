@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
 
   spec.summary       = %q{"A Ruby gem to help introverts"}
   spec.description   = %q{"A Ruby gem to have musuem dates with yourself as a selfdate"}
-  spec.homepage      = "git@github.com:ernsykamethelus/intex_affair.git"
+  spec.homepage      = "https://github.com/ernsykamethelus/intex_affair.git"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'

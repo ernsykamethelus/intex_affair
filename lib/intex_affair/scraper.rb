@@ -1,4 +1,6 @@
+
 class IntexAffair::Scraper
+  
   # attr_accessor :name, :event, :url
 
   # def self.list_months
