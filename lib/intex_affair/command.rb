@@ -64,7 +64,9 @@ class IntexAffair::Command
     puts "If your desired event was chosen, Tap 'That's it' to exit"
   end
 
-  def goodbye
+    def goodbye
   puts "Thank you!"
-   end
-  end
+    end
+  end    
+end
+end
