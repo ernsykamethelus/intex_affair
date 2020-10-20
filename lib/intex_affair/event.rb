@@ -1,12 +1,13 @@
 class IntexAffair::Event
-    attr_accessor :name, :month
+    attr_accessor :name, :month, :url
     @@all = []
    
     
     def initialize(name, month)
       @name = name 
       @month = month
-      add_to_month
+      @url = url
+      addup_month
       save
     end
     
@@ -14,10 +15,9 @@ class IntexAffair::Event
         @@all
     end
 
-     def add_to_month
+     def addup_month
         @month_events << self unless @month.events.include?(self)
      end
-
 
     def save
       @@all << self
