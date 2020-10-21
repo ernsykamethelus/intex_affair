@@ -1,24 +1,25 @@
 # require 'Nokogiri'
 # require 'HTTParty'
+  require 'pry'
 
 class IntexAffair::Scraper
   
-    attr_accessor :name, :url, :scraped_months, :scraped_events
+  #   attr_accessor :name, :url, :scraped_months, :scraped_events
 
-  def initialize(name)
-   @name = name
-  end
+  # def initialize(name)
+  #  @name = name
+  # end
 
 def self.scraped_months
+  binding.pry
   page = Nokogiri::HTML(open("https://www.wmoda.com/visit-2/"))
 months = page.css("select#archives-dropdown-2 option")
 
-months.each do |m|
-  puts m.text
-  IntexAffair::Month.new(name)
+ months.each do |month|
+  puts month.text =[]
+  # IntexAffair::Month.new
 end
   end
-end 
 
 def self.scraped_events(month)
   url = "https://www.wmoda.com/visit-2/"
@@ -29,3 +30,4 @@ def self.scraped_events(month)
         info = li.text.strip
        end
       end
+    end

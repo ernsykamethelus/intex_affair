@@ -1,20 +1,20 @@
 class IntexAffair::Month 
-  attr_accessor :name
+  attr_accessor :name, :months, :events
   @@all = []
  
   
-  def initialize(name, url)
+  def initialize(name, months)
     @name = name 
+    @months = []
     @events = []
-
     save
   end
 
   
-  def self.all
-    IntexAffair::Scraper.scraped_months if @@all.empty?
-    @@all
-  end
+  # def get_months
+  #   IntexAffair::Scraper.scraped_months if @months.empty
+  #   @@all
+  # end
    
 
   def get_events
