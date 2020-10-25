@@ -30,6 +30,7 @@ require 'pry'
 
     def self.scraping_events
       @@all << scraping_events
+      @events = IntexAffair::Scraper.scraped_events
     end
 
      def scraping_events

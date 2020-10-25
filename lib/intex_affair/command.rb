@@ -49,13 +49,13 @@ class IntexAffair::Command
 
   def get_user_event
     puts "Choose an event:"
-    input = gets.strip
-    event = @months
+    # input = gets.strip
+    # event = @months
     puts self.scraping_events
   end
 
   def choose_ending
-    puts "If your desired event was chosen, Tap 'That's it' to exit"
+    puts "If your desired event was chosen, Tap 'That's it' to exit!"
   end
 
     def goodbye
