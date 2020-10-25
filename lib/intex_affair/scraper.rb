@@ -3,6 +3,7 @@
   require 'pry'
 
 class IntexAffair::Scraper
+  attr_accessor :scraped_months, :scraped_events
 
   def self.scraped_months
   page = Nokogiri::HTML(URI.open("https://www.wmoda.com/visit-2/"))
@@ -16,24 +17,35 @@ class IntexAffair::Scraper
   end
 end
 
-      def self.scraped_events
-        page = Nokogiri::HTML(URI.open("https://www.wmoda.com/visit-2/"))
-        events = page.css("div.recent-posts-2 li")
-        event.each do |e|
-        # title = e.css ().text.strip
-        # url = e.css("a").attr("href").value
-        name = e.text
-        IntexAffair::Event.new
-       end
-      end
+def self.scraped_events
+  page = Nokogiri::HTML(URI.open("https://www.wmoda.com/visit-2/"))
+  events = page.css("div#recent-posts-2 li")
+  events.each do |e|
+    name = e.text
+      #  ref = m.attr("value")
+  # name = m
+   IntexAffair::Event.new
+   end
+  end
 
-    #   def self.event(event)
-    #     url = "https://www.wmoda.com#{event.url}"
-    #     doc = Nokogiri::HTML(open(url))
-    #     lis = doc.css("div#recent-posts-2 li")
-    #     lis.each do |li|
-    #     info = li.text.strip
-    #     event.key_info << info
-    #     end
-    #   end
-    # end
+      # def self.scraped_events
+      #   binding.pry
+      #   page = Nokogiri::HTML(URI.open("https://www.wmoda.com/visit-2/"))
+      #   events = page.css("ul.widget-sidebar-widget li")
+      #   event.each do |e|
+      #   title = e.css ("recent-posts-2").text.strip
+      #   url = e.css("a").attr("href").value
+      #   name = e.text
+      #   IntexAffair::Event.new
+      #  end
+      # end
+
+      # def self.event(event)
+      #   url = "https://www.wmoda.com#{event.url}"
+      #   doc = Nokogiri::HTML(open(url))
+      #   lis = doc.css("div.recent-posts-2 li")
+      #   lis.each do |li|
+      #   info = li.text.strip
+      #   end
+      # end
+  

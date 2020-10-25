@@ -1,7 +1,6 @@
 require 'pry'
 
    class IntexAffair::Month
-
   attr_accessor :name, :months, :scraping_months
    @@all = []
  
@@ -10,6 +9,7 @@ require 'pry'
     self.months
     @@all << self 
     scraping_months
+    # save
   end
 end
 
@@ -29,17 +29,10 @@ def scraping_months
   @months = IntexAffair::Scraper.scraped_months
 end
   
-  # def get_months
-  #   @months = IntexAffair::Scraper.self.scraped_months(months)
-  #   # @@all
-  #    end
-  
-
-  def get_events
-    IntexAffair::Scraper.scraped_events(self) if @events.empty?
-  end
+  # def get_events
+  #   IntexAffair::Scraper.scraped_events(self) if @events.empty?
+  # end
    
-#   def save
-#     @@all << self
-#   end
-# end
+  # def save
+  #   @@all << self
+  # end

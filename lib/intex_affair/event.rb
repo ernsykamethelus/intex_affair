@@ -1,18 +1,19 @@
-class IntexAffair::Event
-    attr_accessor :title, :events, :scraping_events
+require 'pry'
+ class IntexAffair::Event
+    attr_accessor :name, :events, :scraping_events
     @@all = []
-   
     
     def initialize
-      @title = title 
+      @name = name
       self.events
       @@all << self
-      scraping_events
-      save
+      # add_month
+      self.scraping_events
     end
+  end
 
-    def title=(event_title)
-      @events = event_title
+    def name=(event_name)
+      @events = event_name
     end
 
     def self.events(events)
@@ -23,8 +24,16 @@ class IntexAffair::Event
         @@all
     end
 
-     def scraping_events
-      @events = IntexAffair::Scraper.scraped_events
-        @month.events << self unless @month.events.include?(self)
-     end
+    # def add_month
+    #   @months.events << self unless @months.events.include?(self)
+    # end
+
+    def self.scraping_events
+      @@all << scraping_events
     end
+
+     def scraping_events
+      self
+      # @events = IntexAffair::Scraper.scraped_events
+      # @@all
+     end

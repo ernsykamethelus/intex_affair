@@ -8,10 +8,8 @@ class IntexAffair::Command
     # get_months
     list_months
     get_user_month
-    show_events_for
+    # list_events
     get_user_event
-    # list_months     
-    # chosen_month
     choose_ending
     goodbye
   end
@@ -20,30 +18,12 @@ class IntexAffair::Command
      puts "\nHello,\nDue to COVID-19, we want to protect our team and you.\nFor your own safety and to ongoing precautionary measures, please contact the business directly for updated hours and availabilty.\nThank you for your support.\n"
  end
  
-#  def get_months
-#    #to be scraped
-#    @months = IntexAffair::Month.new
-#    #i wish i had some months so i gave it a list of months
-#  end
-# end
- 
  def list_months
  # list months
     puts "\nHappy Choosing:\n"
-    puts scraping_months.text
-    # @months = IntexAffair::Month.new
-      # puts @months.text
-    # @months.each.with_index(1) do |month, index| 
-    #   puts "#{index}. #{month.name}"
+      puts scraping_months.text
     end
   end
-
-  def get_months
-    @months.each.with_index(1) do |month, index| 
-      puts "#{index}. #{month.name}"
-  end
-end
-
 
   def get_user_month
     chosen_month = gets.strip.to_i
@@ -53,24 +33,25 @@ end
     input.to_i <= data.length && input.to_i > 0 
   end
 
-   def show_events_for
-    puts "\nPlease Choose Desired Event:\n"
-    puts scraping_events
-    puts "Here are events for #{month}"
-    month.events.each.with_index(1) do |event, idx|
-      puts "#{idx}. #{event}"
-    end
-  get_month(month)
-  end
+  #  def list_events
+  #   # puts "\nPlease Choose Desired Event:\n"
+  #   puts scraping_events
+  #   # puts "Here are events for #{month}"
+  #   # month.events.each.with_index(1) do |event, idx|
+  #   #   puts "#{idx}. #{event}"
+  #   end
+  # # get_month(month)
+  # # end
 
-    def valid_input(input, data)
-    input.to_i <= data.length && input.to_i > 0 
-    end
+  #   def valid_input(input, data)
+  #   input.to_i <= data.length && input.to_i > 0 
+  #   end
 
-  def get_user_event(month)
+  def get_user_event
     puts "Choose an event:"
     input = gets.strip
-    event = month.events[input.to_i -1]
+    event = @months
+    puts self.scraping_events
   end
 
   def choose_ending
