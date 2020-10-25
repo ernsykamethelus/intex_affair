@@ -1,7 +1,16 @@
+PATH
+  remote: .
+  specs:
+    intex_affair (0.1.0)
+      colorize (~> 0.8.1)
+      nokogiri (~> 1.8)
+      open-uri
+
 GEM
   remote: https://rubygems.org/
   specs:
     coderay (1.1.3)
+    colorize (0.8.1)
     method_source (1.0.0)
     mini_portile2 (2.4.0)
     nokogiri (1.10.10)
@@ -10,14 +19,16 @@ GEM
     pry (0.13.1)
       coderay (~> 1.1)
       method_source (~> 1.0)
+    rake (10.5.0)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
-  nokogiri
-  open-uri
+  bundler (~> 2.0)
+  intex_affair!
   pry
+  rake (~> 10.0)
 
 BUNDLED WITH
    2.1.2

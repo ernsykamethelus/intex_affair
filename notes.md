@@ -43,3 +43,20 @@ Classes #collection #blueprint #factory
 #   end
 # end
 #end
+
+<!-- def self.scraped_months
+    doc = Nokogiri::HTML(URI.open("https://www.wmoda.com/visit-2/"))
+  
+     months = doc.css("select#archives-dropdown-2 option")
+    
+    months.each do |m|
+    name = m.text
+     IntexAffair::Month.new(name)
+
+def user_chosen_month
+ # list months
+    puts "\nHappy Choosing:\n"
+    @m.each.with_index(1)do |month, index|
+    puts "#{index}. #{month.name}"
+  end
+end -->

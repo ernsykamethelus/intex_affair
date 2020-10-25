@@ -4,70 +4,74 @@ class IntexAffair::Command
 
    def greeting
      puts 'Bienvenue to Intex!'
-    #  @input = ""
-    #  until @input == "exit"
-    name_and_message
-    chosen_months       #--> only the months left over for the year of 2020
-    @months
-    user_chosen_month
-  #   get_month
-  #  goodbye
+    get_message
+    # get_months
+    list_months
+    get_user_month
+    show_events_for
+    get_user_event
+    # list_months     
+    # chosen_month
+    choose_ending
+    goodbye
   end
 
- def name_and_message
+ def get_message
      puts "\nHello,\nDue to COVID-19, we want to protect our team and you.\nFor your own safety and to ongoing precautionary measures, please contact the business directly for updated hours and availabilty.\nThank you for your support.\n"
  end
  
- def months
-  @months
- end
-
- def chosen_months
-   #to be scraped
-   @months = IntexAffair::Scraper.scraped_months
-   #i wish i had some months so i gave it a list of months
- end
+#  def get_months
+#    #to be scraped
+#    @months = IntexAffair::Month.new
+#    #i wish i had some months so i gave it a list of months
+#  end
+# end
  
- def user_chosen_month
+ def list_months
  # list months
- @months = []
     puts "\nHappy Choosing:\n"
-    @months.each do |month|
-      puts @months
+    puts scraping_months.text
+    # @months = IntexAffair::Month.new
+      # puts @months.text
+    # @months.each.with_index(1) do |month, index| 
+    #   puts "#{index}. #{month.name}"
     end
   end
-  
-  #     def valid_input(input, data)
-  #   input.to_i <= data.length && input.to_i > 0 
-  # end
 
-   def show_events_for(chosen_month)
+  def get_months
+    @months.each.with_index(1) do |month, index| 
+      puts "#{index}. #{month.name}"
+  end
+end
+
+
+  def get_user_month
+    chosen_month = gets.strip.to_i
+  end
+
+      def valid_input(input, data)
+    input.to_i <= data.length && input.to_i > 0 
+  end
+
+   def show_events_for
     puts "\nPlease Choose Desired Event:\n"
-    month = @months
-    #month.get_events
+    puts scraping_events
     puts "Here are events for #{month}"
-    month.events.each.with_index(1) do |event, i|
-      puts "{i}. #{event}"
+    month.events.each.with_index(1) do |event, idx|
+      puts "#{idx}. #{event}"
     end
   get_month(month)
   end
 
     def valid_input(input, data)
     input.to_i <= data.length && input.to_i > 0 
-  end
-
-   def show_events_for(chosen_month)
-    puts "\nPlease Choose Desired Event:\n"
-    month = @months
-    #month.get_events
-    puts "Here are events for #{month}"
-    month.events.each.with_index(1) do |event, i|
-      puts "{i}. #{event}"
-      require 'pry'
     end
-  get_month(month)
-  end
 
+  def get_user_event(month)
+    puts "Choose an event:"
+    input = gets.strip
+    event = month.events[input.to_i -1]
+  end
 
   def choose_ending
     puts "If your desired event was chosen, Tap 'That's it' to exit"
@@ -76,4 +80,3 @@ class IntexAffair::Command
     def goodbye
   puts "Thank you!"
     end
-  end
