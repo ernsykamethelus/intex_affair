@@ -60,3 +60,45 @@ def user_chosen_month
     puts "#{index}. #{month.name}"
   end
 end -->
+
+ #  def list_events
+  #   # puts "\nPlease Choose Desired Event:\n"
+  #   puts scraping_events
+  #   # puts "Here are events for #{month}"
+  #   # month.events.each.with_index(1) do |event, idx|
+  #   #   puts "#{idx}. #{event}"
+  #   end
+  # # get_month(month)
+  # # end
+
+  #   def valid_input(input, data)
+  #   input.to_i <= data.length && input.to_i > 0 
+  #   end
+
+   # def self.event(event)
+      #   url = "https://www.wmoda.com#{event.url}"
+      #   doc = Nokogiri::HTML(open(url))
+      #   lis = doc.css("div.recent-posts-2 li")
+      #   lis.each do |li|
+      #   info = li.text.strip
+      #   end
+      # end
+
+      
+    # def scraping_events
+    #   self
+    #   # @events = IntexAffair::Scraper.scraped_events
+    #   # @@all
+    #  end
+
+    # def self.scraped_events
+#   page = Nokogiri::HTML(URI.open("https://www.wmoda.com/visit-2/"))
+#   events = page.css("div#recent-posts-2 li")
+#   events.each do |e|
+#     name = e.text
+#       #  ref = m.attr("value")
+#   # name = m
+#    IntexAffair::Event.new
+#   #  binding.pry
+#    end
+#   end

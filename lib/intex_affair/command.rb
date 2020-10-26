@@ -7,7 +7,6 @@ class IntexAffair::Command
     get_message
     # get_months
     list_months
-    get_user_month
     # list_events
     get_user_event
     choose_ending
@@ -25,37 +24,13 @@ class IntexAffair::Command
     end
   end
 
-  def get_user_month
-    chosen_month = gets.strip.to_i
-  end
-
-      def valid_input(input, data)
-    input.to_i <= data.length && input.to_i > 0 
-  end
-
-  #  def list_events
-  #   # puts "\nPlease Choose Desired Event:\n"
-  #   puts scraping_events
-  #   # puts "Here are events for #{month}"
-  #   # month.events.each.with_index(1) do |event, idx|
-  #   #   puts "#{idx}. #{event}"
-  #   end
-  # # get_month(month)
-  # # end
-
-  #   def valid_input(input, data)
-  #   input.to_i <= data.length && input.to_i > 0 
-  #   end
-
   def get_user_event
-    puts "Choose an event:"
-    # input = gets.strip
-    # event = @months
-    puts self.scraping_events
+    puts "\nChoose an event:\n"
+    puts get_events.text
   end
 
   def choose_ending
-    puts "If your desired event was chosen, Tap 'That's it' to exit!"
+    print "\nIf your desired event was chosen, Tap 'That's it' to exit!\n"
   end
 
     def goodbye
